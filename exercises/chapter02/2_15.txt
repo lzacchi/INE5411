@@ -1,0 +1,6 @@
+2.15    Provide the type and hexadecimal representation of
+        following instruction: sw $t1, 32($t2)
+
+        R:
+        sw is a type I instruction
+        10 1011 01001 01010  000000000100000

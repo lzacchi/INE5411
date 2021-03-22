@@ -1,0 +1,18 @@
+2.24    Suppose the program counter (PC) is set to 0x2000 0000. Is it
+        possible to use the jump (j) MIPS assembly instruction to set the PC to the address
+        as 0x4000 0000? Is it possible to use the branch-on-equal (beq) MIPS assembly
+        instruction to set the PC to this same address?
+
+        R:
+        A = 0x2000 0000 = 0010 0000 0000 0000 0000 0000 0000 0000
+        B = 0x4000 0000 = 0100 0000 0000 0000 0000 0000 0000 0000
+
+        If the PC is at A, the j instruction has a maximum reach of 28 bits
+        (26 of the address field + 00)
+        so A + 0000 0011 1111 1111 1111 1111 1111 1111 = 0x23fffffc
+
+        If the PC is at A, the beq instruction has a maximum reach of PC + 4 + 18 bits
+        (16 bits of the address field + 00)
+        so A + 4 + 0011 1111 1111 1111 1100 = 0x2003fffc
+
+        So, neither instruction can reach address of B

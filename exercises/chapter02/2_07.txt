@@ -1,0 +1,18 @@
+2.7 [5] <§2.3> Show how the value 0xabcdef12 would be arranged in memory
+of a little-endian and a big-endian machine. Assume the data is stored starting at
+address 0.
+
+Big endian:
+    byte    word
+       0    ab
+       1    cd
+       2    ef
+       3    12
+
+
+Little endian:
+    byte    word
+       0    12
+       1    ef
+       2    cd
+       3    ab
